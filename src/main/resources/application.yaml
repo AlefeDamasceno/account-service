@@ -23,6 +23,19 @@ spring:
         format_sql: true
         use_sql_comments: true
 
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          auto-create-topics: true
+      bindings:
+        accountCreated-out-0:
+          destination: account-created
+          content-type: application/json
+          producer:
+            partition-count: 3
+
 server:
   port: 8081
   error:
@@ -42,3 +55,4 @@ logging:
     com.example: DEBUG
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+

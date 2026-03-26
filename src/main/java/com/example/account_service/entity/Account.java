@@ -30,10 +30,6 @@ public class Account {
         this.status = AccountStatus.ATIVO;
     }
 
-    public void sacar(){}
-
-    public void depositar(){}
-
     public void setId(UUID id) {
         this.id = id;
     }
